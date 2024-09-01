@@ -1,0 +1,64 @@
+import java.util.*;
+class helloworld{
+public static void main(String[] args){
+Scanner sc =new Scanner(System.in);
+System.out.println("This a Simple calculator");
+int n;
+while(true){
+    System.out.println("Enter the first number (only Integer) : ");
+    if(sc.hasNextInt()){
+        n=sc.nextInt();
+        break;
+    }
+    else{
+        System.out.println("Invalid Input");
+        System.out.println("Please enter a valid number");
+        sc.next();
+    }
+}
+int m;
+while(true){
+    System.out.println("Enter the second number (only Integer):");
+    if(sc.hasNextInt()){
+        m=sc.nextInt();
+        break;
+    }
+    else{
+        System.out.println("Invalid Input");
+        System.out.println("Please enter a valid number");
+        sc.next();
+    }
+}
+System.out.println("The operations are given below");
+
+System.out.println("Addition  '+' ");
+System.out.println("Subtraction '-' ");
+System.out.println("Multiplication '*' ");
+System.out.println("Division '/' ");
+
+System.out.println("Enter the operand :");
+char operand = sc.next().charAt(0);
+
+switch(operand){
+    case '+':
+    System.out.println("The addition of "+n+" and "+m+" is :"+ n+m);
+    break;
+    case '-':
+    System.out.println("The subtraction of "+n+" and "+m+" is :" + (n-m));
+    break;
+    case '*':
+    System.out.println("The multiplication of "+n+" and "+m+" is :"+  n*m);
+    break;
+    case '/':
+    if(m==0){
+        System.out.println("Sorry cannot divisible by zero ");
+        break;
+    }
+    System.out.println("The division of "+n+" and "+m+" is :"+(double)n/(double)m);
+    break;
+    default:
+    System.out.println("Invalid operation");
+    break;
+}
+}
+}
